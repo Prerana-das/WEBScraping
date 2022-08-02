@@ -22,9 +22,17 @@ axios.get("https://www.jamesqquick.com/talks")
                 .children('.card--title')
                 .first()
                 .text()
-                
-                console.log("title",title)
-                // talks[index]= {title};
 
+                const link= $(element)
+                            .first()
+                            .attr('href')
+
+                const des= $(element)
+                            .children('.card--content')
+                            .children('.card--description')
+                            .text()
+                            // console.log('desssssssss',des)
+                talks[index]= {title,link,des};
+                console.log("title",talks[index])
             })
     });
